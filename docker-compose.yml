@@ -25,7 +25,7 @@ services:
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-      - MYSQL_DATABASE=seminar
+      - MYSQL_DATABASE=seminar_db
       - TZ=Asia/Tokyo
     ports:
       - 12306:3306
