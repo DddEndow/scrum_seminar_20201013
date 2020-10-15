@@ -27,11 +27,11 @@
             <textarea name="share-account" rows="4" cols="40" id="input_share-account"></textarea>
             <br>
             感情レベル:<br>
-            <input type="radio" name="emotion" value="U+1F604" id="input_emotion"/> &#128516;
-            <input type="radio" name="emotion" value="U+1F642" id="input_emotion"/> &#128578;
-            <input type="radio" name="emotion" value="U+1F636" id="input_emotion"/> &#128566;
-            <input type="radio" name="emotion" value="U+1F614" id="input_emotion"/> &#128532;
-            <input type="radio" name="emotion" value="U+1F922" id="input_emotion"/> &#129314;
+            <input type="radio" name="emotion" value="5" id="input_emotion"/> &#128516;
+            <input type="radio" name="emotion" value="4" id="input_emotion"/> &#128578;
+            <input type="radio" name="emotion" value="3" id="input_emotion"/> &#128566;
+            <input type="radio" name="emotion" value="2" id="input_emotion"/> &#128532;
+            <input type="radio" name="emotion" value="1" id="input_emotion"/> &#129314;
 
             <br>
             背景:<br>

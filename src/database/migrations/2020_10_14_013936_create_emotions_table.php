@@ -20,6 +20,18 @@ class CreateEmotionsTable extends Migration
             $table->string('name', 191)
                 ->comment('感情の絵文字');
 
+            $table->string('share_account', 191)
+                ->comment('共有アカウント');
+
+            $table->string('emotion', 191)
+                ->comment('感情');
+
+            $table->string('background', 191)
+                ->comment('背景');
+
+            $table->string('event', 191)
+                ->comment('出来事');
+
             $table->timestamps();
             $table->softDeletes();
         });

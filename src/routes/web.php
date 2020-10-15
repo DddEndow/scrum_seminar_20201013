@@ -34,6 +34,4 @@ Route::post('emotion/create/confirm', 'App\Http\Controllers\EmotionController@cr
 // 感情の登録
 Route::post('emotion', 'App\Http\Controllers\EmotionController@store');
 
-Route::get('test', function () {
-    return view('well-being.list');
-});
+Route::get('emotion/list', 'App\Http\Controllers\EmotionController@list');

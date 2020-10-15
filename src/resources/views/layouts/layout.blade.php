@@ -12,17 +12,30 @@
 
     @show
     <title>@yield('title')</title>
+
+    <style type="text/css">
+        <!--
+        .navbar-brand{
+            width:30%;
+        }
+        .navbar{
+            font-size:20px;
+        }
+        .right{
+            float:right;
+        }
+        -->
+    </style>
+
 </head>
 <body>
 
 {{-- ナビゲーションバー --}}
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="/home">Kanjo Reflection Diary</a>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link active" href="/emotion/create">Input Emotion</a>
-        </li>
-    </ul>
+    <a class="navbar-brand" href="/emotion/list?user=hoge">Kanjo Reflection Diary</a>
+    <nav class="right">
+        <a href="/emotion/create">Input</a> | <a href="/emotion/list?user=hoge">View</a>
+    </nav>
 </nav>
 
 {{-- コンテンツ --}}

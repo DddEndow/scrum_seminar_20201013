@@ -1,11 +1,11 @@
 @extends('layouts.layout')
 
-@section('title', '感情詳細情報')
+@section('title', '感情一覧')
 
 @section('content')
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="./js/utils.js"></script>
+<script src="/js/utils.js"></script>
 <div style="width:75%;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
     <canvas id="canvas" style="display: block; width: 70%; height: 30%;" class="chartjs-render-monitor"></canvas>
 </div>
@@ -14,26 +14,21 @@
     var config = {
         type: 'line',
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Aug'],
+            labels: @json($emotions['date']),
             datasets: [{
-                label: 'My First dataset',
+                label: 'My Emotion',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
-                data: [10,100,10,100,10,100,100],
+                data: @json($emotions['level']),
                 fill: false,
-            }, {
-                label: 'My Second dataset',
-                fill: false,
-                backgroundColor: window.chartColors.blue,
-                borderColor: window.chartColors.blue,
-                data: [100,10,100,10,100,10,50],
-            }]
+            },
+            ]
         },
         options: {
             responsive: true,
             title: {
                 display: true,
-                text: 'Chart.js Line Chart'
+                text: '感情チャート'
             },
             tooltips: {
                 mode: 'index',

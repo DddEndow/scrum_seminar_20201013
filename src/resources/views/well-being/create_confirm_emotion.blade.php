@@ -3,6 +3,29 @@
 @section('title', '感情詳細情報')
 
 @section('content')
+<?php
+    switch ($emotion['emotion']) {
+        case 5:
+            $emotion_icon = '😄';
+            break;
+        case 4:
+            $emotion_icon = '🙂';
+            break;
+        case 3:
+            $emotion_icon = '😶';
+            break;
+        case 2:
+            $emotion_icon = '😔';
+            break;
+        case 1:
+            $emotion_icon = '🤢';
+            break;
+        default:
+            $emotion_icon = 'none';
+            break;
+    }
+    $emotion_string = $emotion['emotion'] . '(' . $emotion_icon . ')'
+?>
 
 <div class="container">
 
@@ -18,7 +41,7 @@
         </tr>
         <tr>
             <th class="text-center table-show-th">感情レベル</th>
-            <td class="table-show-td">{{ $emotion['emotion'] }}</td>
+            <td class="table-show-td">{{ $emotion_string }}</td>
         </tr>
         <tr>
             <th class="text-center table-show-th">感背景</th>
@@ -38,17 +61,14 @@
             {{  csrf_field()  }}
             <input type="hidden" name="name" value="{{ $emotion['name'] }}" >
             <input type="hidden" name="share-account" value="{{ $emotion['share_account'] }}">
-            <input type="hidden" name="emotion" value="$emotion['emotion']">
-            <input type="hidden" name="background" value="$emotion['background']" >
+            <input type="hidden" name="emotion" value="{{ $emotion['emotion'] }}">
+            <input type="hidden" name="background" value="{{ $emotion['background'] }}" >
             <input type="hidden" name="event" value="{{ $emotion['event'] }}">
 
             <button type="submit" class="btn btn-lg btn-success btn-edit">はい</button>
         </form>
 
-        <form method="get" action="/emotion/create">
-            {{  csrf_field()  }}
-            <button type="button" class="btn btn-lg btn-danger btn-delete">いいえ</button>
-        </form>
+        <button type=“button” onclick="location.href='/emotion/create'" class="btn btn-lg btn-danger btn-delete">いいえ</button>
     </div>
 </div>
 
